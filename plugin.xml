@@ -35,37 +35,29 @@
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-            <activity android:name="com.microsoft.aad.adal.AuthenticationActivity" ></activity>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:name="com.microsoft.aad.adal.AuthenticationActivity" ></activity>
         </config-file>
 
-        <source-file src="src/android/CordovaAdalPlugin.java" target-dir="src/com/microsoft/aad/adal" />
-        <source-file src="src/android/DefaultAuthenticationCallback.java" target-dir="src/com/microsoft/aad/adal" />
-        <source-file src="src/android/SimpleSerialization.java" target-dir="src/com/microsoft/aad/adal" />
-
-        <lib-file src="src/android/libs/adal.jar" />
-        <lib-file src="src/android/libs/gson.jar" />
-        <lib-file src="src/android/libs/compatibility-v4.jar" />
+        <framework src="src/android/CordovaADAL" custom="true" />
 
         <!-- resource files can't be distributed via .jar-->
-        <resource-file src="src\android\libs\res\layout\http_auth_dialog.xml" target="res\layout\http_auth_dialog.xml"/>
-        <resource-file src="src\android\libs\res\layout\dialog_authentication.xml" target="res\layout\dialog_authentication.xml"/>
-        <resource-file src="src\android\libs\res\layout\activity_authentication.xml" target="res\layout\activity_authentication.xml"/>
+<!--         <resource-file src="src\android\CordovaADAL\res\layout\http_auth_dialog.xml" target="res\layout\http_auth_dialog.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\layout\dialog_authentication.xml" target="res\layout\dialog_authentication.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\layout\activity_authentication.xml" target="res\layout\activity_authentication.xml"/>
 
-        <resource-file src="src\android\libs\res\values\styles.xml" target="res\values\styles.xml"/>
-        <resource-file src="src\android\libs\res\values\dimens.xml" target="res\values\dimens.xml"/>
-        <resource-file src="src\android\libs\res\values\adal-strings.xml" target="res\values\adal-strings.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\values\styles.xml" target="res\values\styles.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\values\dimens.xml" target="res\values\dimens.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\values\adal-strings.xml" target="res\values\adal-strings.xml"/>
 
-        <resource-file src="src\android\libs\res\values-sw600dp\dimens.xml" target="res\values-sw600dp\dimens.xml"/>
-        <resource-file src="src\android\libs\res\values-sw720dp-land\dimens.xml" target="res\values-sw720dp-land\dimens.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\values-sw600dp\dimens.xml" target="res\values-sw600dp\dimens.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\values-sw720dp-land\dimens.xml" target="res\values-sw720dp-land\dimens.xml"/>
 
-        <resource-file src="src\android\libs\res\values-v11\styles.xml" target="res\values-v11\styles.xml"/>
-        <resource-file src="src\android\libs\res\values-v14\styles.xml" target="res\values-v14\styles.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\values-v11\styles.xml" target="res\values-v11\styles.xml"/>
+        <resource-file src="src\android\CordovaADAL\res\values-v14\styles.xml" target="res\values-v14\styles.xml"/> -->
 
-        <!-- <framework src="src/android/adal.gradle" custom="true" type="gradleReference"/> -->
         <hook type="after_plugin_install" src="scripts/afterPluginInstall-android.js" />
     </platform>
 
